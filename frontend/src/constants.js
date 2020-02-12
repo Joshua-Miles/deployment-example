@@ -1,1 +1,1 @@
-export const BACKEND_HOST = '104.154.208.145:3000'
+export const BACKEND_HOST = '35.223.66.191:5000'
