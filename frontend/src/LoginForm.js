@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BACKEND_HOST } from './constants';
 export class LoginForm extends Component {
 
     state = {
@@ -7,7 +8,7 @@ export class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3000/user', {
+        fetch(`http://${BACKEND_HOST}/user`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

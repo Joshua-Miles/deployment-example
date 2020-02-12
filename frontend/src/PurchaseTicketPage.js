@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavBar } from './NavBar'
 import { TicketContainer } from './TicketContainer'
+import { BACKEND_HOST } from './constants';
 
 export class PurchaseTicketPage extends Component {
 
@@ -9,7 +10,7 @@ export class PurchaseTicketPage extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:3000/tickets')
+        fetch(`http://${BACKEND_HOST}/tickets`)
         .then(res => res.json())
         .then(tickets => {
             this.setState({
@@ -19,7 +20,6 @@ export class PurchaseTicketPage extends Component {
     }
 
     selectTicket = (selectedTicket) => {
-        console.log('here')
         this.setState({
             availableTickets: this.state.availableTickets.filter( ticket => selectedTicket != ticket)
         })

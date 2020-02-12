@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { LoginPage } from './LoginPage'
 import { MyTicketsPage } from './MyTicketsPage'
 import { PurchaseTicketPage } from './PurchaseTicketPage'
+import { BACKEND_HOST } from './constants'
 
 
 // Using componentDidMount to get data from a server
@@ -55,7 +56,7 @@ export class App extends Component {
             }
         })
 
-        fetch(`http://localhost:3000/tickets/${ticket.id}`, {
+        fetch(`http://${BACKEND_HOST}/tickets/${ticket.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
